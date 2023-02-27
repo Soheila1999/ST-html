@@ -1,0 +1,85 @@
+1.什么是css
+	层叠样式表
+	简单来说html是搭建网页的骨架 ，css用来美化页面的
+2.css的优势
+	内容与样式分离
+	丰富的样式，使用页面布局更加灵活
+	网页表现的形式统一，容易修改
+	减少网页的代码量，增加网页的浏览速度，节省宽带
+3.css样式的三种
+	内联样式:
+		在html的标签中，添加一个style属性，在style属性中设定样式名和样式值，如果有多个样式设定，需要用分号隔开
+		<开始标签 style="样式名:样式值;样式名:样式值；">内容</结束标签>
+	内部样式表:												
+		在head结束标签下面，添加一个style标签，在这个标签中，通过选择器来选取页面标签，然后在选择器后面添加一个大括号{},
+		在大括号中，通过 样式名:样式值 的形式添加。
+		<style>
+			选择器{	
+					样式名:样式值；
+				}
+		</style>
+		选择器类型:
+			标签选择器  标签名，直接把标签名字拿过来
+			类选择器    .类型 可以在页面中多次使用
+			id选择器    #id  唯一
+		使用注意:
+			id属性和类属性不能以数字开头
+	外部样式表(基本使用这个)
+		在css文件家中，创建一个后缀为css的文件，这个文件中通过选择器{}来写css代码
+		链接式:在html文件，如果要使用这个外部的css文件，则在head标签中通过link标签进行引用
+			<link rel="stylesheet" href="css/*.css">  rel关联 stylesheet样式表
+		导入式: 
+			<style type="text/css">
+				@import url("css/*.css");
+			</style>
+		链接式与导入式的区别
+			<link />标签属于XHTML   @import是属于css2.1
+			使用<link />链接的css文件优先加载到网页当中 在进行编译显示
+			使用@import导入的css文件 客户端显示HTML结构，在把css文件加载到网页当中
+			 @import是属于css2.1特有的，对于不兼容css2.1的浏览器来说就是无效的
+4.内联样式   基本不用 （提倡一种代码分离的思想）
+  内部样式   如果网页单独有的效果
+  外部样式   多个网页有的相同效果
+5.字体样式和文本样式
+	字体样式:
+		font-size:设置字体大小 12px
+		font-family:设置字体类型 "宋体"
+		font-style:设置字体风格
+		font-weight:设置字体粗细
+		font:设置所有的字体属性  风格 粗细 大小 类型
+	文本样式:
+		color:设置文本颜色
+		text-align:设置元素水平对齐方式 left right center
+		line-height:设置文本的行高
+		text-decoration:设置文本的装饰  none underline overline line-through
+6.cursor鼠标形状
+	cursor: text指示文本
+			crosshair:十字
+			help:帮助
+			wait:等待效果
+			pointer:小手
+			default:默认
+7.背景
+	背景颜色background-color
+		可直接填写英文单词
+		rgb(r,g,b)
+		rgba(r,g,b,a) a为透明度，0透明，1不透明
+		可填写十六进制 #000000
+	背景图片background-image:url(img/*.gif);
+		当标签小，图片大的时候，只能展示图片的一部分
+		当标签大，图片小的时候，就会出现重复的效果
+		可以通关background-repeat设定重复
+	背景重复background-repeat:no-repeat;
+		repeat-x:沿着水平重复
+		repeat-y:沿着垂直重复
+	背景图片在背景中的位置background-position:center center;
+		像素:50px 50px
+		百分比:50%  50%
+		位置单词:水平(left center right) 垂直(top center bottom)
+	背景图片尺寸background-size:cover;
+		像素:100px 100px 
+		百分比:50% 50%
+		单词:contain 直到宽或高与父标签一样
+			cover 直到铺满整个标签，可能会出现因为满足铺满导致的图片溢出
+	背景复合属性background:颜色 url 重复 位置/尺寸
+	
